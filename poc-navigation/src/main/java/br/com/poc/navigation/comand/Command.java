@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.poc.navigation.comands.impl;
+package br.com.poc.navigation.comand;
 
-import br.com.poc.navigation.comands.Command;
 import br.com.poc.navigation.dto.Coordinate;
 import br.com.poc.navigation.exception.InvalidCommandException;
 
@@ -13,11 +12,8 @@ import br.com.poc.navigation.exception.InvalidCommandException;
  *
  * @author desenv
  */
-public class MoveCommand implements Command {
+public interface Command {
 
-    @Override
-    public void execute(Coordinate coordinate) throws InvalidCommandException {
-
-    }
+	Coordinate execute(Coordinate coordinate) throws InvalidCommandException;
 
 }

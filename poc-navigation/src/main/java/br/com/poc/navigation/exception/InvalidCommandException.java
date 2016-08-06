@@ -11,20 +11,20 @@ package br.com.poc.navigation.exception;
  */
 public class InvalidCommandException extends RuntimeException {
 
-    public InvalidCommandException() {
-        
-    }
+	public InvalidCommandException() {
 
-    public InvalidCommandException(String message) {
-        super(message);
-    }
+	}
 
-    public InvalidCommandException(String message, Throwable cause) {
-        super(message, cause);
-    }
+	public InvalidCommandException(String message) {
+		super(message);
+	}
 
-    public InvalidCommandException(Throwable cause) {
-        super(cause);
-    }
+	public InvalidCommandException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public InvalidCommandException(Throwable cause) {
+		super(cause);
+	}
 
 }

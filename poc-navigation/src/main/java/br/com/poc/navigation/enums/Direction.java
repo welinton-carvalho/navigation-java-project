@@ -9,11 +9,8 @@ package br.com.poc.navigation.enums;
  *
  * @author desenv
  */
-public enum Position {
+public enum Direction {
 
-    NORTH,
-    EAST,
-    WEST,
-    SOUTH;
+	NORTH, EAST, WEST, SOUTH;
 
 }

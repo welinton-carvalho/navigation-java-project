@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import br.com.poc.navigation.component.impl.NavigationComponentImpl;
 import br.com.poc.navigation.dto.Coordinate;
-import br.com.poc.navigation.enums.Position;
+import br.com.poc.navigation.enums.Direction;
 
 /**
  *
@@ -31,7 +31,7 @@ public class NavigationComponentTest {
 		coordinate.setX(0);
 		coordinate.setY(0);
 		coordinate.setY(0);
-		coordinate.setPosition(Position.SOUTH);
+		coordinate.setDirection(Direction.SOUTH);
 
 		// navigationComponent.
 

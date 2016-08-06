@@ -5,7 +5,7 @@
  */
 package br.com.poc.navigation.dto;
 
-import br.com.poc.navigation.enums.Position;
+import br.com.poc.navigation.enums.Direction;
 
 /**
  *
@@ -13,72 +13,77 @@ import br.com.poc.navigation.enums.Position;
  */
 public class Coordinate {
 
-    private int x;
+	private int x;
 
-    private int y;
+	private int y;
 
-    private int z;
+	private int z;
 
-    private Position position;
+	private Direction direction;
 
-    public Coordinate() {
+	public Coordinate() {
 
-    }
+	}
 
-    public void increaseX() {
-        this.x++;
-    }
+	public void increaseX() {
+		this.x++;
+	}
 
-    public void increaseY() {
-        this.y++;
-    }
+	public void increaseY() {
+		this.y++;
+	}
 
-    public void increaseZ() {
-        this.z++;
-    }
+	public void increaseZ() {
+		this.z++;
+	}
 
-    public void decrementX() {
-        this.x--;
-    }
+	public void decrementX() {
+		this.x--;
+	}
 
-    public void decrementY() {
-        this.y--;
-    }
+	public void decrementY() {
+		this.y--;
+	}
 
-    public void decrementZ() {
-        this.z--;
-    }
+	public void decrementZ() {
+		this.z--;
+	}
 
-    public int getX() {
-        return x;
-    }
+	public int getX() {
+		return x;
+	}
 
-    public void setX(int x) {
-        this.x = x;
-    }
+	public void setX(int x) {
+		this.x = x;
+	}
 
-    public int getY() {
-        return y;
-    }
+	public int getY() {
+		return y;
+	}
 
-    public void setY(int y) {
-        this.y = y;
-    }
+	public void setY(int y) {
+		this.y = y;
+	}
 
-    public int getZ() {
-        return z;
-    }
+	public int getZ() {
+		return z;
+	}
 
-    public void setZ(int z) {
-        this.z = z;
-    }
+	public void setZ(int z) {
+		this.z = z;
+	}
 
-    public Position getPosition() {
-        return position;
-    }
+	public Direction getDirection() {
+		return direction;
+	}
 
-    public void setPosition(Position position) {
-        this.position = position;
-    }
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+
+	@Override
+	public String toString() {
+		return x + ", " + y + ", " + z + ", " + direction;
+	}
 
 }

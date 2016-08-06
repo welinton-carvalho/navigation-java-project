@@ -11,7 +11,6 @@ package br.com.poc.navigation.enums;
  */
 public enum Turn {
 
-    LEFT,
-    RIGHT;
+	LEFT, RIGHT;
 
 }

@@ -10,8 +10,7 @@ package br.com.poc.navigation.enums;
  * @author desenv
  */
 public enum Depth {
-    
-    GO_UP,
-    GO_DOWN;
-    
+
+	GO_UP, GO_DOWN;
+
 }
