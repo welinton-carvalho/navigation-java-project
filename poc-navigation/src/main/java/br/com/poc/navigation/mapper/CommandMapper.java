@@ -17,40 +17,50 @@ import java.util.List;
  */
 public class CommandMapper {
 
-    public CommandMapper() {
+	public CommandMapper() {
 
-    }
+	}
 
-    public List<CommandFactory> parse(final String sequentialCommands) throws ParseInputCommandException {
+	public List<CommandFactory> parse(final String sequentialCommands)
+			throws ParseInputCommandException {
 
-        final List<CommandFactory> commands = new ArrayList<>();
+		final List<CommandFactory> commands = new ArrayList<>();
 
-        if (sequentialCommands != null) {
+		if (sequentialCommands != null) {
 
-            List<String> commandStringList = Arrays.asList(sequentialCommands.split(""));
+			List<String> commandStringList = Arrays.asList(sequentialCommands
+					.split(""));
 
-            commandStringList.stream().forEach((String commandString) -> {
+			commandStringList
+					.stream()
+					.forEach(
+							(String commandString) -> {
 
-                try {
+								try {
 
-                    final CommandFactory commandFactory = CommandFactory.valueOf(commandString.toUpperCase());
+									final CommandFactory commandFactory = CommandFactory
+											.valueOf(commandString
+													.toUpperCase());
 
-                    commands.add(commandFactory);
+									commands.add(commandFactory);
 
-                } catch (IllegalArgumentException exception) {
+								} catch (IllegalArgumentException exception) {
 
-                    final String message = String.format("Foi encontrado um comando inválido: \"%s\"", commandString);
+									final String message = String
+											.format("Foi encontrado um comando inválido: \"%s\"",
+													commandString);
 
-                    throw new ParseInputCommandException(message, exception);
+									throw new ParseInputCommandException(
+											message, exception);
 
-                }
+								}
 
-            });
+							});
 
-        }
+		}
 
-        return commands;
+		return commands;
 
-    }
+	}
 
 }

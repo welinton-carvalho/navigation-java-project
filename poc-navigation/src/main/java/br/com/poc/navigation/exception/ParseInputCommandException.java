@@ -14,19 +14,19 @@ public class ParseInputCommandException extends RuntimeException {
 	private static final long serialVersionUID = 9099746637508560221L;
 
 	public ParseInputCommandException() {
-        
-    }
 
-    public ParseInputCommandException(String message) {
-        super(message);
-    }
+	}
 
-    public ParseInputCommandException(String message, Throwable cause) {
-        super(message, cause);
-    }
+	public ParseInputCommandException(String message) {
+		super(message);
+	}
 
-    public ParseInputCommandException(Throwable cause) {
-        super(cause);
-    }
+	public ParseInputCommandException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public ParseInputCommandException(Throwable cause) {
+		super(cause);
+	}
 
 }

@@ -5,6 +5,8 @@
  */
 package br.com.poc.navigation.component;
 
+import java.util.logging.Logger;
+
 import org.junit.Test;
 
 import br.com.poc.navigation.component.impl.NavigationComponentImpl;
@@ -16,6 +18,10 @@ import br.com.poc.navigation.enums.Direction;
  * @author desenv
  */
 public class NavigationComponentTest {
+
+	public static final Logger LOGGER = Logger.getAnonymousLogger();
+
+	public static final String EXPECTED_EXCEPTION = "Exceção esperada.";
 
 	private final NavigationComponent navigationComponent;
 
