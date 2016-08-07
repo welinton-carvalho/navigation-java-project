@@ -16,7 +16,6 @@
 
 		<version.maven.compiler.plugin>3.1</version.maven.compiler.plugin>
 		<version.spring>4.1.7.RELEASE</version.spring>
-		<version.commons.lang>3.0</version.commons.lang>
 		<version.junity>4.12</version.junity>
 	</properties>
 
@@ -50,11 +49,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${version.spring}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>${version.commons.lang}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
