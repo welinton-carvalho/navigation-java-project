@@ -24,7 +24,7 @@ import br.com.poc.navigation.exception.ParseInputCommandException;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ApplicationContextNavigation.class)

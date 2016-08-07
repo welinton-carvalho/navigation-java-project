@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 import br.com.poc.navigation.comand.impl.CommandFactory;
 import br.com.poc.navigation.exception.ParseInputCommandException;
 
+/**
+ *
+ * @author wpadua
+ */
 @Component
 public interface CommandMapper {
 

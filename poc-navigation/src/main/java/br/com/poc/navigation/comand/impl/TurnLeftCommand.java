@@ -14,7 +14,7 @@ import br.com.poc.navigation.exception.InvalidCommandException;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 @Component
 public class TurnLeftCommand extends GenericCommand implements Command {

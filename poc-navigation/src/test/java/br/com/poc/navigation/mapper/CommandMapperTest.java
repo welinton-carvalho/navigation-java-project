@@ -15,6 +15,10 @@ import br.com.poc.navigation.comand.impl.TurnLeftCommand;
 import br.com.poc.navigation.comand.impl.TurnRightCommand;
 import br.com.poc.navigation.mapper.impl.CommandMapperImpl;
 
+/**
+ *
+ * @author wpadua
+ */
 public class CommandMapperTest {
 
 	public static final Logger LOGGER = Logger.getAnonymousLogger();

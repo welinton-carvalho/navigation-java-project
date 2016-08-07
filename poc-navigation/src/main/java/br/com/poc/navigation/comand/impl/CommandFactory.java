@@ -9,7 +9,7 @@ import br.com.poc.navigation.comand.Command;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 public enum CommandFactory {
 

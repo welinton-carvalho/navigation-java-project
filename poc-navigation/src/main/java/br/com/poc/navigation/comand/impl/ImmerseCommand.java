@@ -13,7 +13,7 @@ import br.com.poc.navigation.exception.InvalidCommandException;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 @Component
 public class ImmerseCommand extends GenericCommand implements Command {

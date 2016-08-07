@@ -7,7 +7,7 @@ package br.com.poc.navigation.enums;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 public enum Direction {
 

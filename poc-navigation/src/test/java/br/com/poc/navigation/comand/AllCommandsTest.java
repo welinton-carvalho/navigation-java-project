@@ -18,7 +18,7 @@ import br.com.poc.navigation.enums.Direction;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ApplicationContextNavigation.class)

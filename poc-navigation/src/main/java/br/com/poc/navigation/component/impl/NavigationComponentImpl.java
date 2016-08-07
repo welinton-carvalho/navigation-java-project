@@ -20,7 +20,7 @@ import br.com.poc.navigation.mapper.CommandMapper;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 @Component
 public class NavigationComponentImpl implements NavigationComponent {

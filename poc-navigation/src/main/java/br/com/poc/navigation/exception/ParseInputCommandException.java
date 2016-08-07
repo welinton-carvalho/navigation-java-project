@@ -7,7 +7,7 @@ package br.com.poc.navigation.exception;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 public class ParseInputCommandException extends RuntimeException {
 

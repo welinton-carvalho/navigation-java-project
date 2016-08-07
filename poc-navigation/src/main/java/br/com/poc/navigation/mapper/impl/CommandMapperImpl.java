@@ -5,19 +5,19 @@
  */
 package br.com.poc.navigation.mapper.impl;
 
-import br.com.poc.navigation.comand.impl.CommandFactory;
-import br.com.poc.navigation.exception.ParseInputCommandException;
-import br.com.poc.navigation.mapper.CommandMapper;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import br.com.poc.navigation.comand.impl.CommandFactory;
+import br.com.poc.navigation.exception.ParseInputCommandException;
+import br.com.poc.navigation.mapper.CommandMapper;
+
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 @Component
 public class CommandMapperImpl implements CommandMapper {

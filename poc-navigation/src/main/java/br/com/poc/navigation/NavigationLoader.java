@@ -5,27 +5,42 @@
  */
 package br.com.poc.navigation;
 
+import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import br.com.poc.navigation.component.NavigationComponent;
+import br.com.poc.navigation.configuration.ApplicationContextNavigation;
+import br.com.poc.navigation.exception.InvalidCommandException;
+import br.com.poc.navigation.exception.ParseInputCommandException;
+import br.com.poc.navigation.exception.util.ExceptionMessageCollector;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 public class NavigationLoader {
 
 	private NavigationComponent navigationComponent;
 
 	public NavigationLoader() {
-		this.startNavigation();
+
 	}
 
 	public static void main(String[] args) {
 
-		// ApplicationContext applicationContext
+		final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+				ApplicationContextNavigation.class);
 
-		new NavigationLoader().startNavigation();
+		NavigationLoader navigationLoader = new NavigationLoader();
+
+		navigationLoader.setNavigationComponent(applicationContext
+				.getBean(NavigationComponent.class));
+
+		navigationLoader.startNavigation();
+
+		applicationContext.close();
 
 	}
 
@@ -33,13 +48,13 @@ public class NavigationLoader {
 
 		Scanner scanner = new Scanner(System.in);
 
-		printLogo();
+		this.printLogo();
 
 		boolean continueExecution = true;
 
 		do {
 
-			printMenu();
+			this.printMenu();
 
 			final String option = scanner.next();
 
@@ -47,25 +62,43 @@ public class NavigationLoader {
 
 			case "1":
 
-				System.out.print("\n > Digite os comandos de navegação: ");
+				try {
 
-				String commands = scanner.next();
+					this.printCommandList();
 
-				System.out.println("\n > Aguarde o processamento....");
+					String commands = scanner.next();
 
-				System.out.println("\n > Comandos inputados: " + commands);
+					System.out.println("\n > Aguarde o processamento....");
 
-				final String distinateCoordinate = " 3 , -2 , -4 , NORTE";
-				// navigationComponent.processar(commands);
+					System.out.println("\n > Comandos inputados: " + commands);
 
-				System.out.println("\n > A rota final será: "
-						+ distinateCoordinate);
+					final String distinateCoordinate = navigationComponent
+							.traceRoute(commands).toString();
+
+					System.out.println("\n > A rota final será: "
+							+ distinateCoordinate);
+
+				} catch (ParseInputCommandException | InvalidCommandException exception) {
+
+					System.out
+							.println("\n > Ocorreram alguns erros ao processar a sequência de comandos:\n");
+
+					final List<String> messages = ExceptionMessageCollector
+							.getStackMessages(exception);
+
+					messages.stream().forEach((message) -> {
+						System.out.println(message);
+					});
+
+				}
 
 				break;
 
 			case "2":
 
 				System.out.println("\n > Obrigado por navegar conosco! \n");
+
+				scanner.close();
 
 				continueExecution = false;
 
@@ -80,6 +113,21 @@ public class NavigationLoader {
 			}
 
 		} while (continueExecution);
+
+	}
+
+	public void printCommandList() {
+
+		System.out.println("\n____________________________");
+		System.out.println("|  COMANDOS DISPONÍVEIS     |");
+		System.out.println("____________________________");
+		System.out.println("|  L - Girar a esquerda     |");
+		System.out.println("|  R - Girar a direita      |");
+		System.out.println("|  M - Mover                |");
+		System.out.println("|  U - Emergir / Subir      |");
+		System.out.println("|  D - Submergir / Descer   |");
+		System.out.println("____________________________");
+		System.out.print(" > Digite a sequência de comandos de navegação: ");
 
 	}
 
@@ -106,6 +154,10 @@ public class NavigationLoader {
 		System.out.println(",.-~*´¨¯¨`*·~-.¸,.-~*´¨¯¨`*·~-~*´¨¯ ");
 		System.out.println(".¸,.-~*´¨¯¨`*·~-.¸,.-~*´¨¯¨`*·~-~*´ ");
 
+	}
+
+	public void setNavigationComponent(NavigationComponent navigationComponent) {
+		this.navigationComponent = navigationComponent;
 	}
 
 }

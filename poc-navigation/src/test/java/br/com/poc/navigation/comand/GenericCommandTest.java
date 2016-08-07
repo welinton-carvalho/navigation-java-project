@@ -10,7 +10,7 @@ import br.com.poc.navigation.enums.Direction;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 public class GenericCommandTest {
 

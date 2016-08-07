@@ -13,7 +13,7 @@ import br.com.poc.navigation.exception.ParseInputCommandException;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 @Component
 public interface NavigationComponent {

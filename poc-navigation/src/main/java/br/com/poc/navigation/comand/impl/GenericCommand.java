@@ -10,7 +10,7 @@ import br.com.poc.navigation.exception.InvalidCommandException;
 
 /**
  *
- * @author desenv
+ * @author wpadua
  */
 public class GenericCommand {
 

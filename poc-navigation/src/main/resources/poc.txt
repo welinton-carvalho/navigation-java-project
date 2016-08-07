@@ -1,4 +1,16 @@
---------------------------------------------------------------------------------
+Teste de programação
+
+Gostaríamos de avaliar o seu estilo de desenvolvimento, para isso pedimos que você faça um pequeno exercício.
+
+Durante o desenvolvimento, dê preferência para implementação em Java.
+
+Crie um projeto no seu Github para que possamos verificar, através dos commits, o seu raciocínio para a conclusão do exercício.
+
+Ah! Não se esqueça de usar Maven ou Gradle como gerenciador de dependências e de fazer testes unitários :wink:
+
+Caso algo não esteja claro, sinta-se livre para assumir qualquer prerrogativa desejada como verdadeira e desenvolver a solução em cima dela; apenas crie uma documentação explicando-a.
+
+Divirta-se!
 
 Viagem ao fundo do mar
 
@@ -16,26 +28,19 @@ Entrada:
 
 Os cientistas mandarão os comandos agrupados em uma única linha, como no exemplo:
 
-LMRDDMMUU 
-
+LMRDDMMUU
 Saída:
 
 A saída deverá conter a coordenada final do submarino junto com sua direção, como no exemplo:
 
--1 2 0 NORTE 
-
---------------------------------------------------------------------------------
-
+-1 2 0 NORTE
 Exemplo de execução:
 
 Dado a seguinte entrada:
 
 (Lembrando que a posição inicial do submarino é 0, 0, 0, NORTE)
 
-RMMLMMMDDLL 
-
+RMMLMMMDDLL
 A saída esperada é:
 
 2 3 -2 SUL
-
---------------------------------------------------------------------------------
