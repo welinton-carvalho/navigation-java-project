@@ -17,16 +17,8 @@ public class ParseInputCommandException extends RuntimeException {
 
 	}
 
-	public ParseInputCommandException(String message) {
-		super(message);
-	}
-
 	public ParseInputCommandException(String message, Throwable cause) {
 		super(message, cause);
-	}
-
-	public ParseInputCommandException(Throwable cause) {
-		super(cause);
 	}
 
 }

@@ -25,8 +25,4 @@ public class InvalidCommandException extends RuntimeException {
 		super(message, cause);
 	}
 
-	public InvalidCommandException(Throwable cause) {
-		super(cause);
-	}
-
 }

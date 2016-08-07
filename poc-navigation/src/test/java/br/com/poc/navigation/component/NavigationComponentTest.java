@@ -5,6 +5,9 @@
  */
 package br.com.poc.navigation.component;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.logging.Logger;
 
 import org.junit.Test;
@@ -16,6 +19,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import br.com.poc.navigation.configuration.ApplicationContextNavigation;
 import br.com.poc.navigation.dto.Coordinate;
 import br.com.poc.navigation.enums.Direction;
+import br.com.poc.navigation.exception.InvalidCommandException;
+import br.com.poc.navigation.exception.ParseInputCommandException;
 
 /**
  *
@@ -37,16 +42,67 @@ public class NavigationComponentTest {
 	}
 
 	@Test
-	public void traceRouteTest() {
+	public void traceRouteSuccessTest() {
 
-		Coordinate coordinate = new Coordinate();
+		// LMRDDMMUU
+		Coordinate coordinate1 = this.navigationComponent
+				.traceRoute("LMRDDMMUU");
 
-		coordinate.setX(0);
-		coordinate.setY(0);
-		coordinate.setY(0);
-		coordinate.setDirection(Direction.SOUTH);
+		// -1 2 0 NORTE
+		assertTrue(coordinate1.getX() == -1);
+		assertTrue(coordinate1.getY() == 2);
+		assertTrue(coordinate1.getZ() == 0);
+		assertEquals(coordinate1.getDirection(), Direction.NORTH);
 
-		// navigationComponent.
+		// RMMLMMMDDLL
+		Coordinate coordinate2 = this.navigationComponent
+				.traceRoute("RMMLMMMDDLL");
+
+		// 2 3 -2 SUL
+		assertTrue(coordinate2.getX() == 2);
+		assertTrue(coordinate2.getY() == 3);
+		assertTrue(coordinate2.getZ() == -2);
+		assertEquals(coordinate2.getDirection(), Direction.SOUTH);
+
+		Coordinate coordinatePreInformed = new Coordinate();
+
+		coordinatePreInformed.setX(-11);
+		coordinatePreInformed.setY(8);
+		coordinatePreInformed.setY(-5);
+		coordinatePreInformed.setDirection(Direction.EAST);
+
+		// 2 3 -2 SUL + RMMLMMMDDLL
+		coordinatePreInformed = this.navigationComponent.traceRoute(
+				"RMMLMMMDDLL", coordinatePreInformed);
+
+		// -8 -7 -2 OESTE
+		assertTrue(coordinatePreInformed.getX() == -8);
+		assertTrue(coordinatePreInformed.getY() == -7);
+		assertTrue(coordinatePreInformed.getZ() == -2);
+		assertEquals(coordinatePreInformed.getDirection(), Direction.WEST);
+
+	}
+
+	@Test
+	public void traceRouteErrorTest() {
+
+		try {
+			this.navigationComponent.traceRoute("8");
+		} catch (ParseInputCommandException e) {
+			LOGGER.info(EXPECTED_EXCEPTION);
+		}
+
+		try {
+			this.navigationComponent.traceRoute("U");
+		} catch (InvalidCommandException e) {
+			LOGGER.info(EXPECTED_EXCEPTION);
+		}
+
+		try {
+			this.navigationComponent.traceRoute("LLU");
+		} catch (InvalidCommandException e) {
+			LOGGER.info(EXPECTED_EXCEPTION);
+		}
 
 	}
 
