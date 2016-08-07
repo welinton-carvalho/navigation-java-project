@@ -25,6 +25,13 @@ public class Coordinate {
 
 	}
 
+	public Coordinate(int x, int y, int z, Direction direction) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.direction = direction;
+	}
+
 	public void increaseX() {
 		this.x++;
 	}

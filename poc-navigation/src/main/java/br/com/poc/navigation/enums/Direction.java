@@ -11,6 +11,17 @@ package br.com.poc.navigation.enums;
  */
 public enum Direction {
 
-	NORTH, EAST, WEST, SOUTH;
+	NORTH("NORTE"), EAST("LESTE"), WEST("OESTE"), SOUTH("SUL");
+
+	private String description;
+
+	private Direction(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return this.description;
+	}
 
 }
