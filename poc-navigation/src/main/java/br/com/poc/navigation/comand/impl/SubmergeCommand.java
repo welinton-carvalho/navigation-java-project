@@ -5,6 +5,8 @@
  */
 package br.com.poc.navigation.comand.impl;
 
+import org.springframework.stereotype.Component;
+
 import br.com.poc.navigation.comand.Command;
 import br.com.poc.navigation.dto.Coordinate;
 import br.com.poc.navigation.exception.InvalidCommandException;
@@ -13,6 +15,7 @@ import br.com.poc.navigation.exception.InvalidCommandException;
  *
  * @author desenv
  */
+@Component
 public class SubmergeCommand extends GenericCommand implements Command {
 
 	public SubmergeCommand() {

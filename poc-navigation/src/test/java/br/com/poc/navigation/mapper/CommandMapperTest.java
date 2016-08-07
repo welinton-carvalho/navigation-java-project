@@ -13,6 +13,7 @@ import br.com.poc.navigation.comand.impl.MoveCommand;
 import br.com.poc.navigation.comand.impl.SubmergeCommand;
 import br.com.poc.navigation.comand.impl.TurnLeftCommand;
 import br.com.poc.navigation.comand.impl.TurnRightCommand;
+import br.com.poc.navigation.mapper.impl.CommandMapperImpl;
 
 public class CommandMapperTest {
 
@@ -23,7 +24,7 @@ public class CommandMapperTest {
 	private final CommandMapper commandMapper;
 
 	public CommandMapperTest() {
-		this.commandMapper = new CommandMapper();
+		this.commandMapper = new CommandMapperImpl();
 	}
 
 	@Test

@@ -8,8 +8,12 @@ package br.com.poc.navigation.component;
 import java.util.logging.Logger;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import br.com.poc.navigation.component.impl.NavigationComponentImpl;
+import br.com.poc.navigation.configuration.ApplicationContextNavigation;
 import br.com.poc.navigation.dto.Coordinate;
 import br.com.poc.navigation.enums.Direction;
 
@@ -17,16 +21,19 @@ import br.com.poc.navigation.enums.Direction;
  *
  * @author desenv
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = ApplicationContextNavigation.class)
 public class NavigationComponentTest {
 
 	public static final Logger LOGGER = Logger.getAnonymousLogger();
 
 	public static final String EXPECTED_EXCEPTION = "Exceção esperada.";
 
-	private final NavigationComponent navigationComponent;
+	@Autowired
+	private NavigationComponent navigationComponent;
 
 	public NavigationComponentTest() {
-		this.navigationComponent = new NavigationComponentImpl();
+
 	}
 
 	@Test

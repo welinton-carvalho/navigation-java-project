@@ -8,7 +8,6 @@ package br.com.poc.navigation;
 import java.util.Scanner;
 
 import br.com.poc.navigation.component.NavigationComponent;
-import br.com.poc.navigation.component.impl.NavigationComponentImpl;
 
 /**
  *
@@ -16,9 +15,21 @@ import br.com.poc.navigation.component.impl.NavigationComponentImpl;
  */
 public class NavigationLoader {
 
+	private NavigationComponent navigationComponent;
+
+	public NavigationLoader() {
+		this.startNavigation();
+	}
+
 	public static void main(String[] args) {
 
-		NavigationComponent navigationComponent = new NavigationComponentImpl();
+		// ApplicationContext applicationContext
+
+		new NavigationLoader().startNavigation();
+
+	}
+
+	private void startNavigation() {
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -72,7 +83,7 @@ public class NavigationLoader {
 
 	}
 
-	public static void printMenu() {
+	public void printMenu() {
 
 		System.out.println("\n____________________________");
 		System.out.println("|  MENU                    |");
@@ -84,7 +95,7 @@ public class NavigationLoader {
 
 	}
 
-	public static void printLogo() {
+	public void printLogo() {
 
 		System.out.println(",.-~*´¨¯¨`*·~-.¸,.-~*´¨¯¨`*·~-~*´¨¯ \n");
 		System.out.println("    Bem-vindo ao Navigation 1.0     \n");
