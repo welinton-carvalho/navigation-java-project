@@ -11,6 +11,8 @@ package br.com.poc.navigation.exception;
  */
 public class InvalidCommandException extends RuntimeException {
 
+	private static final long serialVersionUID = -2855250326886315120L;
+
 	public InvalidCommandException() {
 
 	}
